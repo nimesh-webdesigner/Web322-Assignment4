@@ -22,19 +22,19 @@ app.get("/", (req, res) => {
     res.render("index")
 });
 
-app.get("/templates/views/index", (req, res) => {
+app.get("/index", (req, res) => {
     res.render("index")
 });
 
-app.get("/templates/views/article", (req, res) => {
+app.get("/article", (req, res) => {
     res.render("article");
 })
 
-app.get("/templates/views/login", (req, res) => {
+app.get("/login", (req, res) => {
     res.render("login");
 })
 
-app.get("/templates/views/registration", (req, res) => {
+app.get("/registration", (req, res) => {
     res.render("registration");
 })
 
@@ -56,7 +56,7 @@ app.post("/registration", async (req, res) => {
                 age: req.body.age
             })
             const registered = await registerCustomer.save();
-            res.send(201).render("/templates/views/index");
+            res.send(201).render("/");
         } else {
             res.send("Password is not matching")
         }
